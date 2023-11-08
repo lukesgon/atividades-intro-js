@@ -1,74 +1,28 @@
-const cadastro = document.getElementById('cadastro');
-const clientesCadastrados = [];
-const visualizadorCadastro = document.getElementById('visualizador-cadastro');
+console.log("Bem vindo à calculadora de avaliações do Ifood.")
+console.log("Por favor, siga as instruções adequadamente.")
 
-cadastro.innerHTML = `
-<article>
-    <h2>Cadastrar novo Cliente</h2>
-    <button id="btn-cadastro">Clique para começar</button>
-</article>
-`;
+let conjuntoAvaliacoes = {
+    umaEstrela: Number(prompt("Quantas avaliações apontaram 1 estrela?")),
+    duasEstrelas: Number(prompt("Quantas avaliações apontaram 2 estrelas?")),
+    tresEstrelas: Number(prompt("Quantas avaliações apontaram 3 estrelas?")),
+    quatroEstrelas: Number(prompt("Quantas avaliações apontaram 4 estrelas?")),
+    cincoEstrelas: Number(prompt("Quantas avaliações apontaram 5 estrelas?")),
+}
 
-const btnCadastro = document.getElementById('btn-cadastro');
+console.log(`Houveram ${conjuntoAvaliacoes.umaEstrela} avaliações de 1 estrela.`)
+console.log(`Houveram ${conjuntoAvaliacoes.duasEstrelas} avaliações de 2 estrelas.`)
+console.log(`Houveram ${conjuntoAvaliacoes.tresEstrelas} avaliações de 3 estrelas.`)
+console.log(`Houveram ${conjuntoAvaliacoes.quatroEstrelas} avaliações de 4 estrelas.`)
+console.log(`Houveram ${conjuntoAvaliacoes.cincoEstrelas} avaliações de 5 estrelas.`)
 
-btnCadastro.addEventListener('click', () => {
-        cadastro.innerHTML = `
-        <article>
-            <h2>Cadastrar novo Cliente</h2>
-            <form method="post">
-                <label>Nome
-                    <input type="text" id="nome" name="nome" placeholder="Informe o nome do cliente...">
-                </label>
-                <label>CPF/CNPJ
-                    <input type="text" id="cpfCnpj" name="cpfCnpj" placeholder="Informe o CPF OU CNPJ do cliente...">
-                </label>
-                <button id="enviar-dados">Cadastrar</button>
-            </form>
-        </article>
-        `;
+let somatoriaUmaEstrela = 1 * conjuntoAvaliacoes.umaEstrela;
+let somatoriaDuasEstrelas = 2 * conjuntoAvaliacoes.duasEstrelas;
+let somatoriaTresEstrelas = 3 * conjuntoAvaliacoes.tresEstrelas;
+let somatoriaQuatroEstrelas = 4 * conjuntoAvaliacoes.quatroEstrelas;
+let somatoriaCincoEstrelas = 5 * conjuntoAvaliacoes.cincoEstrelas;
+let somatoriaTotalEstrelas = somatoriaUmaEstrela + somatoriaDuasEstrelas + somatoriaTresEstrelas + somatoriaQuatroEstrelas + somatoriaCincoEstrelas;
+let somatoriaAvaliacoes = conjuntoAvaliacoes.umaEstrela + conjuntoAvaliacoes.duasEstrelas + conjuntoAvaliacoes.tresEstrelas + conjuntoAvaliacoes.quatroEstrelas + conjuntoAvaliacoes.cincoEstrelas;
+let mediaFinal = somatoriaTotalEstrelas / somatoriaAvaliacoes;
 
-        const btnEnviarDados = document.getElementById('enviar-dados');
-
-        btnEnviarDados.addEventListener('click', (event) => {
-            event.preventDefault();
-            let valorNome = document.getElementById('nome').value;
-            let valorCpfCnpj = document.getElementById('cpfCnpj').value;
-            clientesCadastrados.push(valorNome);
-            clientesCadastrados.push(valorCpfCnpj);
-
-            console.log(clientesCadastrados);
-            document.getElementById('nome').value = '';
-            document.getElementById('cpfCnpj').value = '';
-        })
-    });
-
-const bancoDeDados = [];
-const pessoaFisica = [];
-const pessoaJuridica = [];
-
-document.getElementById('atualiza-cadastro').addEventListener('click', () => {
-    if (clientesCadastrados.length === 0) {
-        console.log('Nenhum cliente cadastrado para atualizar o banco de dados.');
-        return;
-    }
-    
-    for (i = 0; i < clientesCadastrados.length; i += 2) {
-        const nomeArray = clientesCadastrados[i];
-        const numeroArray = clientesCadastrados[i + 1];
-    
-        if (numeroArray.length < 12) {
-            pessoaFisica.push([nomeArray, numeroArray]);
-        } else {
-            pessoaJuridica.push([nomeArray, numeroArray])
-        }
-    }
-
-    bancoDeDados.push([pessoaFisica, pessoaJuridica]);
-
-    console.log(pessoaFisica);
-    console.log(pessoaJuridica);
-    console.log(bancoDeDados);
-})
-
-//Resolvi me autodesafiar e adicionei uma interface simples para o cadastro dos clientes, e posterior atualização de um banco de dados de Arrays compostos por outros Arrays.
-//O resultado talvez não tenha sido o ideal, mas recomendo a utilização do live server, com auxílio do dev tools para acompanhar os resultados no console enquanto interage com a interface.
+console.log(`Foram realizadas um total de ${somatoriaAvaliacoes} avaliações.`)
+console.log(`A média final avaliada foi de ${mediaFinal}`)
