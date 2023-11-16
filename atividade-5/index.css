@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    margin: 0.5rem;
+    background-color: #F3EEEA;
+    color: brown;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0.5rem;
+}
+
+h1 {
+    margin-left: 1.5rem;
+}
+
+h2 {
+    margin-bottom: 0.5rem;
+}
+
+#calculadoraIMCArticle {
+    background-color: #EBE3D5;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 40%;
+    border-radius: 0.5rem;
+    color: brown;
+}
+
+#calculadoraIMC {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 0.3rem;
+}
+
+label:hover {
+    cursor: pointer;
+}
+
+input, select {
+    background-color: #F3EEEA;
+    color: brown;
+    font-weight: bold;
+    width: 11rem;
+    margin: 0.3rem 0;
+    border-radius: 0.3rem;
+    border: none;
+    padding: 0.3rem;
+}
+
+select {
+    width: 11.6rem;
+}
+
+select:focus {
+    outline: brown solid 1px;
+}
+
+
+input::placeholder {
+    color: rgba(165, 42, 42, 0.4);
+}
+
+input:focus {
+    outline: brown solid 1px;
+}
+
+button {
+    background-color: brown;
+    color: #F3EEEA;
+    font-weight: bold;
+    margin: 0.3rem 0;
+    border-radius: 0.3rem;
+    border: none;
+    padding: 0.3rem;
+}
+
+button:focus {
+    outline: none;
+    background-color: rgba(165, 42, 42, 0.384);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#resultadosIMC {
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#sobreIMC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#formulaIMC {
+    font-size: 1.5rem;
+}
+
+table {
+    background-color: #EBE3D5;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin: 1rem;
+}
+
+th {
+    font-size: 1.2rem;
+}
+
+td {
+    background-color: #F3EEEA;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.classificacao {
+    font-weight: bold;
+}
+
+#sobreAdultos, #sobreIdosos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

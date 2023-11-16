@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <script src="index.js" defer></script>
+    <title>Calculadora de IMC</title>
+</head>
+<body>
+    <h1>Bem vindo a calculadora de IMC</h1>
+    <p style="margin-left: 1.5rem;">Por favor, insira suas informações a seguir para a apresentação do resultado.</p>
+    <main>
+        <article id="calculadoraIMCArticle">
+            <h2>Calculadora</h2>
+            <form id="calculadoraIMC">
+                <label>Nome <br>
+                    <input type="text" name="name" id="name" placeholder="Ex: Carlos" autocomplete="off">
+                </label>
+                <label>Faixa Etária<br>
+                    <select name="faixaEtaria" id="faixaEtaria">
+                        <option value="selecione">Selecione...</option>
+                        <option value="adulto">De 16 a 59 anos</option>
+                        <option value="idoso">60 anos ou mais</option>
+                    </select>
+                </label>
+                <label>
+                    Altura (em metros) <br>
+                    <input type="text" name="altura" id="altura" placeholder="Ex: 1,83" autocomplete="off">
+                </label>
+                <label>
+                    Massa (em quilogramas) <br>
+                    <input type="text" name="massa" id="massa" placeholder="Ex: 85,4" autocomplete="off">
+                </label>
+            </form>
+            <button id="calcular">Calcular!</button>
+        </article>
+        <article id="resultadosIMC">
+            <section>
+                <h2>Índice de Massa Corporal</h2>
+            </section>
+            <section id="sobreIMC">
+                <section>
+                    <p>O IMC (Índice de Massa Corporal) é uma ferramenta usada para avaliar o peso ideal de um indivíduo, além de detectar casos de obesidade ou desnutrição em pessoas de diferentes idades.
+                    <p>É possível encontrar o resultado do índice fazendo uma conta que envolve a relação do peso de uma pessoa em quilos com a sua altura ao quadrado.</p>
+                    <p>Para a avaliação de um paciente individualmente, no entanto, ele pode ser falho por não levar em conta a composição desse peso corporal, que pode ser composto por gordura, músculos, água e estruturas ósseas.</p>
+                    <p>É importante lembrar também que o IMC varia suas classificações conforme a idade da pessoa, de forma a variar inclusive a quantidade de classificações conforme a faixa etária do indivíduo.</p>
+                    <p>A fórmula considerada para o cálculo do IMC é a seguinte:</p>
+                </section>
+                <br>
+                <section>
+                    <span id="formulaIMC">IMC = quilogramas / (altura x altura) </span>
+                </section>
+            </section>
+        </article>
+    </main>
+</body>
+</html>
